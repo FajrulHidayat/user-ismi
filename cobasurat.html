@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -237,7 +238,7 @@
       console.log(data);
       $.ajax({
         type:"post",
-        url:`http://localhost:9000/suratIzin`,
+        url:`${baseURL}/suratIzin`,
         enctype: `multipart/form-data`,
         processData: false,
         contentType: false,
@@ -252,6 +253,7 @@
       
     }
   </script>
+  <script type="text/javascript" src="assets/js/baseURL.js"></script>
   <script src="assets/jsadmin/js/jquery.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>

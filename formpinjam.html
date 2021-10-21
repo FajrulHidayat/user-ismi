@@ -263,7 +263,7 @@
 console.log(data);
       $.ajax({
         type:"post",
-        url:`http://localhost:9090/pinjaman`,
+        url:`${baseURL}/pinjaman`,
         enctype: `multipart/form-data`,
         processData: false,
         contentType: false,
@@ -278,6 +278,7 @@ console.log(data);
       
     }
   </script>
+  <script type="text/javascript" src="assets/js/baseURL.js"></script>
   <script src="assets/jsadmin/js/jquery.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
