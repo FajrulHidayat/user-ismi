@@ -82,24 +82,24 @@
               Form Surat Izin
             </header>
             <div class="panel-body">
-              <div class="form">
-                <form class="form-validate form-horizontal" id="feedback_form" method="get" enctype="multipart/form-data" action="">
+              <div class="">
+                <!-- <form class="form-validate form-horizontal" id="feedback_form" method="get" enctype="multipart/form-data" action=""> -->
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-6"  >Nik  <span class="required">*</span></label>
                     <div class="col-lg-6">
-                      <input class="form-control" id="nik" name="nik" minlength="5" type="text" required />
+                      <input class="form-control" id="nik" name="nik"  type="text" required />
                   </div>
                   </div>
                   <div class="form-group ">
                       <label for="cname" class="control-label col-lg-offset-2">Nama <span class="required">*</span></label>
                       <div class="col-lg-6">
-                        <input class="form-control" id="nama" name="nama" minlength="5" type="text" required />
+                        <input class="form-control" id="nama" name="nama"  type="text" required />
                       </div>
                   </div> 
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Jenis Usaha <span class="required">*</span></label>
                     <div class="col-lg-6">
-                      <input class="form-control" id="jenis_usaha" name="jenis_usaha" minlength="5" type="text" required />
+                      <input class="form-control" id="jenis_usaha" name="jenis_usaha"  type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
@@ -117,16 +117,16 @@
                   <br>
                   <div class="form-group">
                       <label for="exampleInputFile" class=" control-label col-lg-2">File input</label>
-                      <input type="file" id="exampleInputFile">
+                      <input type="file" id="file">
                       <p class="help-block col-lg-2"></p>
-                    </div>
-                  </form>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-6">
-                      <button class="btn btn-primary"  onclick="onSubmit()">Save</button>
-                      <button class="btn btn-default" type="button">Cancel</button>
-                    </div>
                   </div>
+                  <!-- </form> -->
+                  <!-- <div class="form-group"> -->
+                    <div class="col-lg-offset-2 col-lg-6">
+                      <button class="btn btn-primary"  onclick="event.preventDefault(); return onSubmit()">Save</button>
+                      <button class="btn btn-default" >Cancel</button>
+                    </div>
+                  <!-- </div> -->
                 
               </div>
             </div>
@@ -221,11 +221,11 @@
     function onSubmit(){
       // event.preventDefault();
       console.log("cek")
-      let Nik =document.getElementById("nik").value
+      let nik =document.getElementById("nik").value
       let nama =document.getElementById("nama").value
       let jenis_usaha =document.getElementById("jenis_usaha").value
       let email =document.getElementById("email").value
-      let Alamat=document.getElementById("Alamat").value
+      let Alamat=document.getElementById("alamat").value
       let file = $('#file')[0].files[0]
       
       let data = new FormData()

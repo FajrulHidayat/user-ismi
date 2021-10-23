@@ -82,7 +82,7 @@
             </header>
             <div class="panel-body">
               <div class="form">
-                <form class="form-validate form-horizontal"  method="post" id="feedback_form" enctype="multipart/form-data" action="" >
+                <!-- <form class="form-validate form-horizontal"  method="post" id="feedback_form" enctype="multipart/form-data" action="" > -->
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-6">Nik  <span class="required">*</span></label>
                     <div class="col-lg-6">
@@ -139,10 +139,10 @@
                       <p class="help-block col-lg-2"></p>
                       </div>
                     </div>
-                  </form>
+                  <!-- </form> -->
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-6">
-                      <button class="btn btn-primary"  onclick="onSubmit()">Save</button>
+                      <button class="btn btn-primary"  onclick="event.preventDefault(); return onSubmit()">Save</button>
                       <button class="btn btn-default" type="button">Cancel</button>
                     </div>
                   </div>
@@ -240,7 +240,7 @@
     function onSubmit(){
       // event.preventDefault();
       console.log("cek")
-      let Nik =document.getElementById("Nik").value
+      let nik =document.getElementById("nik").value
       let nama =document.getElementById("nama").value
       let jenis_usaha =document.getElementById("jenis_usaha").value
       let email =document.getElementById("email").value
@@ -251,7 +251,7 @@
       let file = $('#file')[0].files[0]
       
       let data = new FormData()
-      data.append("nik",Nik)
+      data.append("nik",nik)
       data.append("nama",nama)
       data.append("jenis_usaha",jenis_usaha)
       data.append("email",email)
