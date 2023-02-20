@@ -135,7 +135,7 @@
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-6">
                       <label for="exampleInputFile" class=" control-label col-lg-2">File input</label>
-                      <input type="file" id="file">
+                      <input type="file" id="file" multiple>
                       <p class="help-block col-lg-2"></p>
                       </div>
                     </div>
@@ -248,7 +248,7 @@
       let Pendapatan =document.getElementById("pendapatan").value
       let Kekayaan =document.getElementById("kekayaan").value
       let Hasil =document.getElementById("hasil").value
-      let file = $('#file')[0].files[0]
+      let file = $('#file')[0].files
       
       let data = new FormData()
       data.append("nik",nik)
@@ -259,8 +259,11 @@
       data.append("pendapatan",Pendapatan)
       data.append("kekayaan",Kekayaan)
       data.append("hasil",Hasil)
-      data.append("file",file)
-console.log(data);
+      for(let i =0; i < file.length; i++) {
+        data.append("file", file[i]);
+    }
+      // data.append("file",file)
+// console.log(data);
       $.ajax({
         type:"post",
         url:`${baseURL}/pinjaman`,
